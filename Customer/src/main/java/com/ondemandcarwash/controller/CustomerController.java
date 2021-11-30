@@ -30,7 +30,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	//Creating Customer
+	//Creating/ADDING Customer
 	@PostMapping("/addcustomer")
 	public Customer saveCustomer(@RequestBody Customer customer) 
 	{
@@ -48,7 +48,7 @@ public class CustomerController {
 	
 	//Reading Customer by ID
 	@GetMapping("/allcustomers/{id}")
-	public Optional<Customer> getUserById(@PathVariable int id) throws ApiRequestException
+	public Optional<Customer> getCustomerById(@PathVariable int id) throws ApiRequestException
 	{
 		return Optional.of(customerRepository.findById(id)
 				.orElseThrow(()-> new ApiRequestException("CUSTOMER NOT FOUND WITH THIS ID ::")));

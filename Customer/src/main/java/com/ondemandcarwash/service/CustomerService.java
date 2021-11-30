@@ -15,24 +15,23 @@ public class CustomerService {
 	private CustomerRepository customerRepository;
 	
 	
-	
+	//For CREATING/ADDING  Customer 
 	public Customer addCustomer(Customer customer) {
 		return customerRepository.save(customer);
 		
 	}
-
+     //For getting All Customers
 	public List<Customer> getCustomers() {
 		List<Customer> customers =customerRepository.findAll();
 		System.out.println("Getting Customers from DB" + customers);
 		return customers;
 	}
 
+	//For deleting By Id
 	public void deleteById(int id) {
 		customerRepository.deleteById(id);
 		
 	}
 	
-	public void deleteUser(Customer customer) {
-		customerRepository.delete(customer);
-	}
+	
 }

@@ -8,7 +8,6 @@ public class Customer {
 	
 	@Id
 	private int cId;
-	
 	private String cName;
 	private String cPhone;
 	private String cEmail;
