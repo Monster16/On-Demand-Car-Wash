@@ -23,7 +23,9 @@ public class WasherService {
 	//
 	public List<Washer> getWashers() {
 		// TODO Auto-generated method stub
-		return washerRepository.findAll();
+		List<Washer> washer= washerRepository.findAll();
+		System.out.println("Getting Washer from DB" + washer);
+		return washer;
 	}
 
 
