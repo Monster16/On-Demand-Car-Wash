@@ -6,3 +6,6 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://AS-Test:test@population.yidl0.mongodb.net/Washer
+      
+  application:
+    name: WASHER-SERVICE
