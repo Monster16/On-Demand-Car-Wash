@@ -36,10 +36,16 @@ public class OrderController {
 		return "Order is Placed with Washer and will be Proceesed soon " + order;
 	}
 
-	// Reading all washer
+	// Reading all Order
 	@GetMapping("/allorders")
 	public List<Order> getOrder() {
 		return orderRepository.findAll();
+	}
+	// Reading Order by id
+	@GetMapping("/orders/{id}")
+	public Optional<Order> getCustomerById(@PathVariable int id) throws ApiRequestException {
+		return Optional.of(orderRepository.findById(id)
+				.orElseThrow(() -> new ApiRequestException("Order NOT FOUND WITH THIS ID ::")));
 	}
 
 	// Deleting order by Id
